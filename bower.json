@@ -1,0 +1,21 @@
+{
+  "name": "2048",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jill Robinson"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.6.2",
+    "angular-route": "^1.6.2"
+  }
+}
