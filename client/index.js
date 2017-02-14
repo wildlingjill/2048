@@ -1,3 +1,5 @@
+// File containing just game logic
+
 var GRID_SIZE = 4;
 
 var grid = [[ 0, 0, 0, 0 ],
