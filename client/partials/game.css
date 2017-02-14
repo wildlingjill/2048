@@ -1,0 +1,127 @@
+body {
+	font-family: "tahoma", sans-serif;
+	font-size: 20px;
+	background-color: rgb(249, 246, 235);
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	position: relative;
+	margin-left: 380px;
+}
+
+.container:focus {
+	outline: 0;
+}
+
+h1 {
+	color: rgb(98, 91, 83);
+	display: inline-block;
+	width: 200px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+h3 {
+	color: rgb(98, 91, 83);
+	font-size: 20px;
+	display: inline-block;
+	width: 200px;
+	position: absolute;
+	top: 10px;
+	left: 260px;
+	margin-bottom: 0px;
+}
+
+button {
+	width: 105px;
+	margin-bottom: 10px;
+	position: absolute;
+	top: 135px;
+	left: 260px;
+	background-color: rgb(192, 180, 166);
+	color: rgb(98, 91, 83);
+	border-radius: 5px;
+}
+
+h5 {
+	color: rgb(98, 91, 83);
+	text-align: justify;
+	width: 360px;
+	font-size: 15px;
+	margin-top: 0px;
+	margin-bottom: 30px;
+}
+
+table td {
+	width: 80px;
+	height: 80px;
+	border: 5px solid rgb(171, 157, 144);
+	border-radius: 5px;
+	text-align: center;
+	background-color: rgb(192, 180, 166);
+	font-size: 40px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.number-0 {
+	color: rgb(192, 180, 166);
+}
+
+.number-2 {
+	color: rgb(98, 91, 83);
+	background-color: rgb(249, 246, 235);
+}
+
+.number-4 {
+	color: rgb(98, 91, 83);
+	background-color: rgb(243, 237, 216);
+}
+
+.number-8 {
+	color: rgb(255, 255, 255);
+	background-color: rgb(228, 164, 108);
+}
+
+.number-16 {
+	color: rgb(255, 255, 255);
+	background-color: rgb(227, 136, 89);
+}
+
+.number-32 {
+	color: rgb(255, 255, 255);
+	background-color: rgb(225, 113, 85);
+}
+
+.number-64 {
+	color: rgb(255, 255, 255);
+	background-color: rgb(223, 88, 59);
+}
+
+.number-128 {
+	color: rgb(255, 255, 255);
+	background-color: rgb(229, 195, 102);
+}
+
+.number-256 {
+	color: rgb(255, 255, 255);
+	background-color: rgb(228, 192, 87);
+}
+
+.number-512 {
+	color: rgb(255, 255, 255);
+	background-color: rgb(228, 187, 74);
+}
+
+.number-1024 {
+	color: rgb(255, 255, 255);
+	background-color: rgb(227, 184, 62);
+}
+
+.number-2048 {
+	color: rgb(255, 255, 255);
+	background-color: rgb(227, 180, 52);
+}

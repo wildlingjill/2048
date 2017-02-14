@@ -1,0 +1,13 @@
+<div ng-controller="gameController">
+	<div class="container" tabindex="1" ng-keydown="checkkey($event)">
+		<h1>2048</h1>
+		<h3>Score: {{score}}</h3>
+		<h5>Click on screen to start game - use the arrow keys to pick which direction the numbers move. Combine numbers of the same value to reach 2048!</h5>
+		<button ng-click="startUp()">New game</button>
+		<table>
+			<tr ng-repeat="array in grid track by $index">
+				<td ng-repeat="element in array track by $index" class="number-{{element}}">{{element}}</td>
+			</tr>
+		</table>
+	</div>
+</div>

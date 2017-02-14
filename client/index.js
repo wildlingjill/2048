@@ -6,6 +6,36 @@ var grid = [[ 0, 0, 0, 0 ],
 			[ 0, 0, 0, 0 ]];
 
 
+function isGridFull(arr){
+	for (var y = 0; y < arr.length; y++) {
+		if (arr[y].indexOf(0) !== -1){
+			return false;
+		}
+	}
+	return true;
+}
+
+// checks for game over
+function gameOver(arr){
+	if(!isGridFull(arr)){
+		return false;
+	} else {
+		for (var y = 0; y < arr.length; y++){
+			for (var x = 0; x < arr.length; x++) {
+
+				var xSameValue = (x+1 < arr.length && arr[y][x] === arr[y][x+1]);
+				var ySameValue = (y+1 < arr.length && arr[y][x] === arr[y+1][x]);
+
+				if (xSameValue || ySameValue) {
+					return false;
+				}
+			}
+		}
+	}
+	console.log("Game over!");
+	return true;
+}
+
 // console logs 2D array in right format
 function log(arr) {
 	for (var i = 0; i < arr.length; i++){
@@ -27,7 +57,9 @@ function addToGrid(arr, val) {
 	if (arr[y][x] === 0){
 		arr[y][x] = val;
 	} else {
-		addToGrid(arr, val);
+		if(!isGridFull(arr)){
+			addToGrid(arr, val);
+		}
 	}
 }
 
@@ -113,8 +145,10 @@ function leftPress (arr) {
 	// add a new 2 or 4 to the grid in a random square
 	addToGrid(arr, generate2or4());
 
-	// print new grid
-	log(arr);
+	if (!gameOver(arr)) {
+		// print new grid
+		log(arr);
+	}
 }
 
 
@@ -124,7 +158,7 @@ function rightPress(arr) {
 	for (var y = 0; y < arr.length; y++) {
 
 		// variable to stop situations where e.g. [2, 2, 0, 4] gives [8, 0, 0, 0] instead of [4, 4, 0, 0]
-		var stopAt = 0;
+		var stopAt = arr.length-1;
 
 		for (var x = arr.length-1; x >= 0; x--){
 
@@ -161,8 +195,10 @@ function rightPress(arr) {
 	// add a new 2 or 4 to the grid in a random square
 	addToGrid(arr, generate2or4());
 
-	// print new grid
-	log(arr);
+	if (!gameOver(arr)) {
+		// print new grid
+		log(arr);
+	}
 }
 
 
@@ -209,8 +245,10 @@ function upPress(arr) {
 	// add a new 2 or 4 to the grid in a random square
 	addToGrid(arr, generate2or4());
 
-	// print new grid
-	log(arr);
+	if (!gameOver(arr)) {
+		// print new grid
+		log(arr);
+	}
 }
 
 
@@ -220,7 +258,7 @@ function downPress(arr){
 	for (var x = 0; x < arr.length; x++){
 
 		// variable to stop situations where e.g. [2, 2, 0, 4] gives [8, 0, 0, 0] instead of [4, 4, 0, 0]
-		var stopAt = 0;
+		var stopAt = arr.length-1;
 
 		for (var y = arr.length-1; y >= 0; y--) {
 
@@ -257,8 +295,10 @@ function downPress(arr){
 	// add a new 2 or 4 to the grid in a random square
 	addToGrid(arr, generate2or4());
 
-	// print new grid
-	log(arr);
+	if (!gameOver(arr)) {
+		// print new grid
+		log(arr);
+	}
 }
 
 
