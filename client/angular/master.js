@@ -315,12 +315,14 @@ function downPress(arr){
 
 // Angular code below
 
+// instantiate new angular module
 var app = angular.module('app', ['ngRoute']);
 
-
+// configure the angular routes
 app.config(function ($routeProvider) {
 	$routeProvider
 
+	// sets the partial for the root route
 	.when('/',{
 		templateUrl: 'static/partials/game.html',
 		controller: 'gameController'
@@ -332,12 +334,16 @@ app.config(function ($routeProvider) {
 });
 
 
+// page controller for game.html partial
 app.controller('gameController', function($scope, $routeParams, $location) {
 
+	// store grid and score variables in $scope so accessible from page
 	$scope.grid = grid;
 	$scope.score = score;
 
+	// function to start a new game, called from ng-click on partial button
 	$scope.startUp = function() {
+		// reset the grid to all 0s, and the score to 0
 		$scope.grid = [[ 0, 0, 0, 0 ],
 					[ 0, 0, 0, 0 ],
 					[ 0, 0, 0, 0 ],
@@ -347,11 +353,12 @@ app.controller('gameController', function($scope, $routeParams, $location) {
 		score = 0;
 	}
 
+	// get the current score to update the partial
 	$scope.getScore = function() {
    		return score;
 	}
 
-
+	// the $scope press functions call the non-scope functions, pass in the $scope.grid, and update the current score with the $scope.getScore function
 	$scope.leftPress = function() {
 		leftPress($scope.grid);
 		$scope.score = $scope.getScore();
@@ -372,6 +379,7 @@ app.controller('gameController', function($scope, $routeParams, $location) {
 		$scope.score = $scope.getScore();
 	}
 
+	// detects the key that was pressed, if any of the arrow keys calls the appropriate press function and passes in the current grid from $scope
 	$scope.checkkey = function(event) {
 		if (event.keyCode == 38) {
 	        console.log("up arrow");
