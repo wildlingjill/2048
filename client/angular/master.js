@@ -343,6 +343,8 @@ app.controller('gameController', function($scope, $routeParams, $location) {
 					[ 0, 0, 0, 0 ],
 					[ 0, 0, 0, 0 ]];
 		startUp($scope.grid);
+		$scope.score = 0;
+		score = 0;
 	}
 
 	$scope.getScore = function() {
